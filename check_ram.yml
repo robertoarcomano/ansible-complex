@@ -4,3 +4,11 @@
   tasks:
     - name: check ram
       shell: free
+      notify: Restart mysql
+
+  handlers:
+    - name: Restart mysql
+      become: yes
+      ansible.builtin.service:
+        name: mysql
+        state: restarted

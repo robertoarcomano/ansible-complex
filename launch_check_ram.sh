@@ -1,6 +1,7 @@
 #!/bin/bash
 # 0. Variables
 LIMIT="all"
+LIMIT="test"
 CHECK="--check"
 CHECK=""
 INVENTORY="inventory.yml"
