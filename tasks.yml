@@ -1,4 +1,5 @@
 - hosts: all
+  strategy: free
   order: sorted
   vars_files:
     - vars.yml
@@ -15,7 +16,10 @@
       template:
         src: mysqld.cnf
         dest: /etc/mysql/mysql.conf.d/mysqld.cnf
-      notify: Restart mysql
+      notify:
+        - Restart mysql
+        - Restart replica
+        - Show query result
 
   handlers:
     - name: Restart mysql
@@ -23,3 +27,12 @@
       ansible.builtin.service:
         name: mysql
         state: restarted
+    - name: Restart replica
+      become: yes
+      community.mysql.mysql_query:
+        login_unix_socket: /var/run/mysqld/mysqld.sock
+        login_db: db
+        query: SELECT * FROM users
+      register: query
+    - name: Show query result
+      debug: msg="{{ query.query_result }}"
