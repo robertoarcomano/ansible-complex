@@ -6,7 +6,7 @@
       shell: free
     - name: Copy mysql server config file
       become: yes
-      ansible.builtin.copy:
+      copy:
         src: mysqld.cnf
         dest: /etc/mysql/mysql.conf.d/mysqld.cnf
       notify: Restart mysql
