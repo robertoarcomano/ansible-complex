@@ -1,0 +1,8 @@
+all:
+  children:
+    test:
+      hosts:
+        oracle2vpn.robertoarcomano.com:
+    production:
+      hosts:
+        oracle3vpn.robertoarcomano.com:
