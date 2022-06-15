@@ -1,11 +1,11 @@
 #!/bin/bash
 # 0. Variables
 LIMIT="all"
-LIMIT="test"
+#LIMIT="wordpress"
 CHECK="--check"
 CHECK=""
 INVENTORY="inventory.yml"
-PLAYBOOK="check_ram.yml"
+PLAYBOOK="tasks.yml"
 VERBOSE="-v"
 VERBOSE=""
 
