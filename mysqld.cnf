@@ -9,7 +9,6 @@ server-id		= {{server_id}}
 max_binlog_size   	= 100M
 binlog_do_db		= db
 relay-log		= "mysql-relay-log"
-
 gtid-mode=ON
 enforce-gtid-consistency
 log_bin			= {{mysql_log_bin_path}}
