@@ -2,7 +2,7 @@
   strategy: free
   order: sorted
   vars_files:
-    - vars.yml
+    - vars_closed.yml
   tasks:
     - name: check ram
       shell: free

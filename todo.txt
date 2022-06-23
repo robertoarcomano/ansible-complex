@@ -1,10 +1,27 @@
 lineinfile
+
 get_url
 unarchive
+
 pre_tasks
+
 mysql_db
 template j2
 with_items
 changed_when
 environment
 --extra-vars
+
+local_action
+    module: wait_for
+
+delegate_to
+vars_prompt
+    private
+
+tags
+
+block
+
+import_tasks/include_tasks
+
