@@ -19,6 +19,13 @@
       notify:
         - Restart mysql
         - Restart replica
+    - name: git clone
+      when: ansible_host == "localhost"
+      become: false
+      git:
+        repo: git@gitlab.com:roberto.arcomano/Masterit.git
+        dest: /tmp/Masterit
+        version: v0.40
 
   handlers:
     - name: Restart mysql

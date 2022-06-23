@@ -1,2 +1,1 @@
-ansible_user: 'ubuntu'
 mysql_log_bin_path: '/var/log/mysql/mysql-bin.log'

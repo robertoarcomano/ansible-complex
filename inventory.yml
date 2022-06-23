@@ -7,17 +7,26 @@ all:
             oracle1vpn.robertoarcomano.com:
           vars:
             service: "wordpress on docker"
+            ansible_user: 'ubuntu'
         bundle:
           hosts:
             oracle2vpn.robertoarcomano.com:
           vars:
             service: "bundle creator"
             bind_address: "10.4.9.5"
+            ansible_user: 'ubuntu'
             server_id: 1
     arm:
       hosts:
         oracle3vpn.robertoarcomano.com:
       vars:
         service: "arm tester"
+        ansible_user: 'ubuntu'
         bind_address: "10.4.9.6"
         server_id: 2
+    local:
+      hosts:
+        localhost:
+      vars:
+        service: "Local"
+        ansible_user: 'berto'
