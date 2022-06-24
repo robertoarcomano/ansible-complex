@@ -26,6 +26,8 @@
         repo: git@gitlab.com:roberto.arcomano/Masterit.git
         dest: /tmp/Masterit
         version: v0.40
+  roles:
+  - web
 
   handlers:
     - name: Restart mysql

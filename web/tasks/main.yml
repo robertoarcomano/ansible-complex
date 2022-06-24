@@ -1,0 +1,2 @@
+- name: "web tasks"
+  shell: echo tasks for {{ ansible_host }}
